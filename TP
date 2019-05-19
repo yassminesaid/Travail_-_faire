@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>travail</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="elems col-md-12 col-lg-6">
+
+            </div>
+        </div>
+
+    </div>
+
+    <div id="app" class="d-none">
+        <div class="card m-5">
+            <img class="card-img-top" src="" alt="image user">
+            <div class="card-body">
+                <h1 class="card-title"></h1>
+                <p class="card-text"></p>
+                <button class="btn btn-success">BTN</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script>
+        let users = [{
+                name: 'utilisateur1',
+                bio: 'la vie est belle a ensetm',
+                img_url: 'https://lorempixel.com/300/200/people/1'
+            },
+            {
+                name: 'utilisateur2',
+                bio: 'vive ensetm',
+                img_url: 'https://lorempixel.com/300/200/people/2'
+            },
+            {
+                name: 'utilisateur3',
+                bio: 'glsid ensetm',
+                img_url: 'https://lorempixel.com/300/200/people/3'
+            },
+            {
+                name: 'utilisateur4',
+                bio: 'ensetm en force',
+                img_url: 'https://lorempixel.com/300/200/people/4'
+            },
+            {
+                name: 'utilisateur5',
+                bio: 'la vie est belle a ensetm',
+                img_url: 'https://lorempixel.com/300/200/people/5'
+            }
+        ];
+
+        users.forEach((elem) => {
+            let card = document.querySelector('#app .card').cloneNode(true);
+            (card.querySelector('img')).setAttribute('src', elem.img_url);
+            (card.querySelector('h1')).innerText = elem.name;
+            (card.querySelector('p')).innerText = elem.bio;
+            document.querySelector('.container .elems').append(card);
+        });
+    </script>
+
+</body>
+
+</html>
